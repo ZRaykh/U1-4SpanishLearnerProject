@@ -3,7 +3,7 @@ public class LearnerClient {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
-        //greeting program and user information
+        //greeting program and setting up username
         System.out.println("Hello user! Welcome to Spanish Learner, a program that is aimed to help you study spanish" +
                 "at a basic skill level! Please enter a username:");
         String user = s.nextLine();
@@ -19,9 +19,22 @@ public class LearnerClient {
         {
             System.out.println("Please enter a number 1 through 3 for the skill leve. 1 is easiest difficulty, 3 is hardest.");
             int skill = s.nextInt();
-            if (skill != 1 || skill != 2 || skill != 3)
+            if (skill == 1)
             {
-                System.out.println("Incorrect number entered, defaulting to skill level 1.");
+                System.out.println("Easy skill level selected.");
+            }
+            if (skill == 2)
+            {
+                System.out.println("Medium skill level selected.");
+            }
+            if (skill == 3)
+            {
+                System.out.println("Hard skill level selected.");
+            }
+            else
+            {
+                System.out.println("No valid input detected, default easy option entered.");
+                skill = 1;
             }
             SpanishLearner spanishPractice = new SpanishLearner(user, practice, skill);
         }
@@ -33,7 +46,7 @@ public class LearnerClient {
         while (!input.equals("END"))
         {
             System.out.println("Current practice modes include: \"A\" days of the week, \"B\" seasons, \"C\" months \"D\" numbers. " +
-                    "Or enter \"end\" to exit.\nPlease select your choice:");
+                    "Or enter \"end\" to exit, or \"edit\" to change your practice mode.\nPlease select your choice:");
             input = s.nextLine().toUpperCase();
         }
 
