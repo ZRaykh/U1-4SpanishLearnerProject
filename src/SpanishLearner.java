@@ -1,5 +1,7 @@
-
+import  java.text.DecimalFormat;
 public class SpanishLearner {
+    //Decimal format set up
+    DecimalFormat df = new DecimalFormat("0.00");
     //the username that will be reported
     private String user;
     //Used to determine
@@ -35,7 +37,7 @@ public class SpanishLearner {
         return isEnglishToSpanish;
     }
 
-    //answer sheet for days of the week, each boolean value stands for if the answer is right or wrong.
+    //answer sheet for days of the week
     public String daysOfWeek(String monday, String tuesday, String wednesday, String thursday, String friday, String saturday, String sunday)
     {
         String answerSheet;
@@ -44,7 +46,7 @@ public class SpanishLearner {
         {
             if (monday.equals("lunes"))
             {
-                answerSheet = "Monday: Correct!";
+                answerSheet = "Monday: lunes is correct!";
                 count ++;
             }
             else
@@ -52,7 +54,7 @@ public class SpanishLearner {
 
             if (tuesday.equals("martes"))
             {
-                answerSheet += "\nTuesday: Correct!";
+                answerSheet += "\nTuesday: martes is correct!";
                 count ++;
             }
             else
@@ -60,17 +62,17 @@ public class SpanishLearner {
 
             if (wednesday.equals("mie'rcoles"))
             {
-                answerSheet += "\nWednesday: Correct!";
+                answerSheet += "\nWednesday: mie'rcoles is correct!";
                 count ++;
             }
             else
             {
-                answerSheet += "\nWednesday: incorrect! The correct answer is miércoles! Written as: \"mie'rcoles\" on your end";
+                answerSheet += "\nWednesday: incorrect! The correct answer is mi\u00e9rcoles! Written as: \"mie'rcoles\" on your end";
             }
 
             if (thursday.equals("jueves"))
             {
-                answerSheet += "\nThursday: Correct!";
+                answerSheet += "\nThursday: jueves is correct!";
                 count ++;
             }
             else
@@ -80,7 +82,7 @@ public class SpanishLearner {
 
             if (friday.equals("viernes"))
             {
-                answerSheet += "\nFriday: Correct!";
+                answerSheet += "\nFriday: viernes is correct!";
                 count ++;
             }
             else
@@ -90,17 +92,17 @@ public class SpanishLearner {
 
             if (saturday.equals("sa'bado"))
             {
-                answerSheet += "\nSaturday: Correct!";
+                answerSheet += "\nSaturday: sa'bado is Correct!";
                 count ++;
             }
             else
             {
-                answerSheet += "\nSaturday: incorrect! The correct answer is sábado!";
+                answerSheet += "\nSaturday: incorrect! The correct answer is sábado (S\u00e9bado on your end)!";
             }
 
             if (sunday.equals("domingo"))
             {
-                answerSheet += "\nSunday: Correct!";
+                answerSheet += "\nSunday: domingo is orrect!";
                 count ++;
             }
             else
@@ -128,7 +130,7 @@ public class SpanishLearner {
 
             if (wednesday.equals("wednesday"))
             {
-                answerSheet += "\nMiércoles: Correct!";
+                answerSheet += "\nMi\u00e9rcoles: Correct!";
                 count ++;
             }
             else
@@ -158,12 +160,12 @@ public class SpanishLearner {
 
             if (saturday.equals("saturday"))
             {
-                answerSheet += "\nSábado: Correct!";
+                answerSheet += "\nS\u00e9bado: Correct!";
                 count ++;
             }
             else
             {
-                answerSheet += "\nSábado: incorrect! Sábado is saturday in English!";
+                answerSheet += "\nS\u00e9bado: incorrect! S\u00e9bado is saturday in English!";
             }
 
             if (sunday.equals("sunday"))
@@ -176,7 +178,90 @@ public class SpanishLearner {
                 answerSheet += "\nDomingo: incorrect! Domingo is Sunday in English!!";
             }
         }
-        answerSheet += "\n You got" + count / 7.0 + " correct!";
+        double score = count/7.0;
+        answerSheet += "\n You got a score of" + count + "/7 or " + df.format(score) + " correct!";
         return answerSheet;
+    }
+    //answer sheet for the seasons
+    public String seasons(String summer, String winter, String spring, String fall)
+    {
+        String answerSheet;
+        int count = 0;
+        if (isEnglishToSpanish)
+        {
+            if (summer.equals("verano"))
+            {
+                answerSheet = "Summer: verano is correct!";
+                count ++;
+            }
+            else
+                answerSheet = "Summer: Incorrect! The correct answer is verano!";
+
+            if (winter.equals("invierno"))
+            {
+                answerSheet += "Winter: invierno is correct!";
+                count ++;
+            }
+            else
+                answerSheet += "Winter: Incorrect! The correct answer is invierno!";
+
+            if (spring.equals("primavera"))
+            {
+                answerSheet += "Spring: primavera is correct!";
+                count ++;
+            }
+            else
+                answerSheet += "Spring: Incorrect! The correct answer is primavera!";
+
+            if (fall.equals("oton'o"))
+            {
+                answerSheet += "Fall: oto\u00f1o is correct!";
+                count ++;
+            }
+            else
+                answerSheet += "Fall: Incorrect! The correct answer is oto\u00f1o!";
+        }
+        else
+        {
+            if (summer.equals("summer"))
+            {
+                answerSheet = "Verano: summer is correct!";
+                count ++;
+            }
+            else
+                answerSheet = "Verano: Incorrect! The correct answer is summer!";
+
+            if (winter.equals("winter"))
+            {
+                answerSheet += "Invierno: winter is correct!";
+                count ++;
+            }
+            else
+                answerSheet += "Invierno: Incorrect! The correct answer is winter!";
+
+            if (spring.equals("spring"))
+            {
+                answerSheet += "Primavera: spring is correct!";
+                count ++;
+            }
+            else
+                answerSheet += "Primavera: Incorrect! The correct answer is spring!";
+
+            if (fall.equals("fall"))
+            {
+                answerSheet += "oto\u00f1o: fall is correct!";
+                count ++;
+            }
+            else
+                answerSheet += "oto\u00f1o: Incorrect! The correct answer is fall!";
+        }
+        double score = count/4.0;
+        answerSheet += "\n You got a score of " + count + "/4 or " + df.format(score) + " correct!";
+        return answerSheet;
+    }
+    //answer sheet for the months
+    public String months()
+    {
+        return "Blank";
     }
 }
