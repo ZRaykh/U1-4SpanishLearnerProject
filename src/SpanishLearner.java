@@ -199,27 +199,27 @@ public class SpanishLearner {
 
             if (winter.equals("invierno"))
             {
-                answerSheet += "Winter: invierno is correct!";
+                answerSheet += "\nWinter: invierno is correct!";
                 count ++;
             }
             else
-                answerSheet += "Winter: Incorrect! The correct answer is invierno!";
+                answerSheet += "\nWinter: Incorrect! The correct answer is invierno!";
 
             if (spring.equals("primavera"))
             {
-                answerSheet += "Spring: primavera is correct!";
+                answerSheet += "\nSpring: primavera is correct!";
                 count ++;
             }
             else
-                answerSheet += "Spring: Incorrect! The correct answer is primavera!";
+                answerSheet += "\nSpring: Incorrect! The correct answer is primavera!";
 
             if (fall.equals("oton'o"))
             {
-                answerSheet += "Fall: oto\u00f1o is correct!";
+                answerSheet += "\nFall: oto\u00f1o is correct!";
                 count ++;
             }
             else
-                answerSheet += "Fall: Incorrect! The correct answer is oto\u00f1o!";
+                answerSheet += "\nFall: Incorrect! The correct answer is oto\u00f1o!";
         }
         else
         {
@@ -233,34 +233,34 @@ public class SpanishLearner {
 
             if (winter.equals("winter"))
             {
-                answerSheet += "Invierno: winter is correct!";
+                answerSheet += "\nInvierno: winter is correct!";
                 count ++;
             }
             else
-                answerSheet += "Invierno: Incorrect! The correct answer is winter!";
+                answerSheet += "\nInvierno: Incorrect! The correct answer is winter!";
 
             if (spring.equals("spring"))
             {
-                answerSheet += "Primavera: spring is correct!";
+                answerSheet += "\nPrimavera: spring is correct!";
                 count ++;
             }
             else
-                answerSheet += "Primavera: Incorrect! The correct answer is spring!";
+                answerSheet += "\nPrimavera: Incorrect! The correct answer is spring!";
 
             if (fall.equals("fall"))
             {
-                answerSheet += "oto\u00f1o: fall is correct!";
+                answerSheet += "\nOto\u00f1o: fall is correct!";
                 count ++;
             }
             else
-                answerSheet += "oto\u00f1o: Incorrect! The correct answer is fall!";
+                answerSheet += "\nOto\u00f1o: Incorrect! The correct answer is fall!";
         }
         double score = count/4.0;
         answerSheet += "\n You got a score of " + count + "/4 or " + df.format(score) + " correct!";
         return answerSheet;
     }
     //answer sheet for the months
-    public String months()
+    public String months(String jan, String feb, String wed, String thurs)
     {
         return "Blank";
     }
