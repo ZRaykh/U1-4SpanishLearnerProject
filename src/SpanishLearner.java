@@ -92,17 +92,17 @@ public class SpanishLearner {
 
             if (saturday.equals("sa'bado"))
             {
-                answerSheet += "\nSaturday: sa'bado is Correct!";
+                answerSheet += "\nSaturday: sa'bado is correct!";
                 count ++;
             }
             else
             {
-                answerSheet += "\nSaturday: incorrect! The correct answer is sábado (S\u00e9bado on your end)!";
+                answerSheet += "\nSaturday: incorrect! The correct answer is S\u00E1bado (Sa'bado on your end)!";
             }
 
             if (sunday.equals("domingo"))
             {
-                answerSheet += "\nSunday: domingo is orrect!";
+                answerSheet += "\nSunday: domingo is correct!";
                 count ++;
             }
             else
@@ -160,12 +160,12 @@ public class SpanishLearner {
 
             if (saturday.equals("saturday"))
             {
-                answerSheet += "\nS\u00e9bado: Correct!";
+                answerSheet += "\nS\u00E19bado: Correct!";
                 count ++;
             }
             else
             {
-                answerSheet += "\nS\u00e9bado: incorrect! S\u00e9bado is saturday in English!";
+                answerSheet += "\nS\u00E1bado: incorrect! S\u00E1bado is saturday in English!";
             }
 
             if (sunday.equals("sunday"))
@@ -179,7 +179,7 @@ public class SpanishLearner {
             }
         }
         double score = count/7.0;
-        answerSheet += "\n You got a score of" + count + "/7 or " + df.format(score) + " correct!";
+        answerSheet += "\nYou got a score of " + count + "/7 or " + df.format(score) + " correct!";
         return answerSheet;
     }
     //answer sheet for the seasons
@@ -247,7 +247,7 @@ public class SpanishLearner {
             else
                 answerSheet += "\nPrimavera: Incorrect! The correct answer is spring!";
 
-            if (fall.equals("fall"))
+            if (fall.equals("fall") || fall.equals("autumn"))
             {
                 answerSheet += "\nOto\u00f1o: fall is correct!";
                 count ++;
@@ -256,12 +256,261 @@ public class SpanishLearner {
                 answerSheet += "\nOto\u00f1o: Incorrect! The correct answer is fall!";
         }
         double score = count/4.0;
-        answerSheet += "\n You got a score of " + count + "/4 or " + df.format(score) + " correct!";
+        answerSheet += "\nYou got a score of " + count + "/4 or " + df.format(score) + " correct!";
         return answerSheet;
     }
     //answer sheet for the months
-    public String months(String jan, String feb, String wed, String thurs)
+    public String months(String jan, String feb, String mar, String apr, String may, String june, String july, String aug, String sept, String oct, String nov, String dec)
     {
-        return "Blank";
+        String answerSheet;
+        int count = 0;
+        if (isEnglishToSpanish)
+        {
+            if (jan.equals("enero"))
+            {
+                answerSheet = "January: enero is correct!";
+                count ++;
+            }
+            else
+                answerSheet = "January: incorrect! The correct answer is enero!";
+
+            if (feb.equals("febrero"))
+            {
+                answerSheet += "\nFebuary: febrero is correct!";
+                count ++;
+            }
+            else
+                answerSheet += "\nFebuary: incorrect! The correct answer is febrero!";
+
+            if (mar.equals("marzo"))
+            {
+                answerSheet += "\nWednesday: marzo is correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nWednesday: incorrect! The correct answer is marzo!";
+            }
+
+            if (apr.equals("abril"))
+            {
+                    answerSheet += "\nApril: abril is correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nApril: incorrect! The correct answer is abril!";
+            }
+
+            if (may.equals("mayo"))
+            {
+                answerSheet += "\nMarch: mayo is correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nMarch: incorrect! The correct answer is mayo!";
+            }
+
+            if (june.equals("junio"))
+            {
+                answerSheet += "\nJune: junio is correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nJune: incorrect! The correct answer is junio!";
+            }
+
+            if (july.equals("julio"))
+            {
+                answerSheet += "\nJuly: julio is correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nJuly: incorrect! The correct answer is julio!";
+            }
+
+            if (aug.equals("agosto"))
+            {
+                answerSheet += "\nAugust: agosto is correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nAugust: incorrect! The correct answer is agosto!";
+            }
+
+            if (sept.equals("septiembre"))
+            {
+                answerSheet += "\nSeptember: septiembre is correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nSeptember: incorrect! The correct answer is septiembre!";
+            }
+
+            if (oct.equals("octubre"))
+            {
+                answerSheet += "\nOctober: octubre is correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nOctober: incorrect! The correct answer is octubre!";
+            }
+
+            if (nov.equals("noviembre"))
+            {
+                answerSheet += "\nNovember: noviembre is correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nNovember: incorrect! The correct answer is noviembre!";
+            }
+
+            if (dec.equals("diciembre"))
+            {
+                answerSheet += "\nDecember: diciembre is correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nDecember: incorrect! The correct answer is diciembre!";
+            }
+        }
+        else
+        {
+            if (jan.equals("january"))
+            {
+                answerSheet = "Enero: Correct!";
+                count ++;
+            }
+            else
+                answerSheet = "Enero: Incorrect! Enero is January in English!";
+
+            if (feb.equals("febuary"))
+            {
+                answerSheet += "\nFebrero: Correct!";
+                count ++;
+            }
+            else
+                answerSheet += "\nFebrero: incorrect! Febrero is Febuary in English!";
+
+            if (mar.equals("march"))
+            {
+                answerSheet += "\nMarzo: Correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nMarzo: incorrect! Marzo is March in English!";
+            }
+
+            if (apr.equals("april"))
+            {
+                answerSheet += "\nAbril: Correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nAbril: incorrect! Abril is April in English!";
+            }
+
+            if (may.equals("may"))
+            {
+                answerSheet += "\nMayo: Correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nMayo: incorrect! Mayo is May in English!";
+            }
+
+            if (june.equals("june"))
+            {
+                answerSheet += "\nJunio: Correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nJunio: incorrect! Junio is June in English!";
+            }
+
+            if (july.equals("july"))
+            {
+                answerSheet += "\nJulio: Correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nJulio: incorrect! Julio is July in English!!";
+            }
+
+            if (aug.equals("august"))
+            {
+                answerSheet += "\nAgosto: Correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nAgosto: incorrect! Agosto is August in English!!";
+            }
+
+            if (sept.equals("september"))
+            {
+                answerSheet += "\nSeptiembre: Correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nSeptiembre: incorrect! Septiembre is September in English!!";
+            }
+
+            if (oct.equals("october"))
+            {
+                answerSheet += "\nOctubre: Correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nOctubre: incorrect! Octubre is October in English!!";
+            }
+
+            if (nov.equals("november"))
+            {
+                answerSheet += "\nNoviembre: Correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nnoviembre: incorrect! Noviembre is November in English!!";
+            }
+
+            if (dec.equals("december"))
+            {
+                answerSheet += "\nDiciembre: Correct!";
+                count ++;
+            }
+            else
+            {
+                answerSheet += "\nDiciembre: incorrect! Diciembre is December in English!!";
+            }
+        }
+        double score = count/12.0;
+        answerSheet += "\nYou got a score of " + count + "/12 or " + df.format(score) + " correct!";
+        return answerSheet;
+    }
+    public String toString()
+    {
+        String goodbye = "Thank you for using Spanish learner " + user;
+        if (level != - 1)
+        {
+            goodbye += "\nFinishing skill level: " + level;
+        }
+        return goodbye;
     }
 }

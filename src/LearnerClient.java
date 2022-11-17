@@ -27,13 +27,14 @@ public class LearnerClient {
         while (!input.equals("END"))
         {
             System.out.println("Current practice modes include: \"A\" days of the week, \"B\" seasons, \"C\" months." +
-                    "Or enter \"end\" to exit, or \"edit\" to change your practice mode.\nPlease select your choice:");
+                    " Or enter \"end\" to exit, or \"edit\" to change your practice mode.\nPlease select your choice:");
             input = s.nextLine().toUpperCase();
 
             //days of the week practice
             if (input.equals("A"))
             {
-                System.out.println("Days of the week selected. Please use \" ' \" after a letter to indicate accent marks. Example: \u00ED would be i'");
+                System.out.println("Days of the week selected. Please use \" ' \" after a letter to indicate accent marks. Example: \u00ED would be i'" +
+                        "| For ~ accent marks, input ' instead.");
                 if (sp.isEnglishToSpanish())
                 {
                     System.out.println("What is Monday in Spanish?");
@@ -64,7 +65,7 @@ public class LearnerClient {
                     String thursday = s.nextLine().toLowerCase();
                     System.out.println("What is Viernes in English?");
                     String friday = s.nextLine().toLowerCase();
-                    System.out.println("What is S\u00e9bado in English?");
+                    System.out.println("What is S\u00E1bado in English?");
                     String saturday = s.nextLine().toLowerCase();
                     System.out.println("What is Domingo in English?");
                     String sunday = s.nextLine().toLowerCase();
@@ -73,8 +74,9 @@ public class LearnerClient {
             }
 
             //seasons practice
-            if (input.equals("B")) {
-                System.out.println("Seasons selected. Please use \" ' \" after a letter to indicate accent marks. Example: \u00ED would be i'");
+            else if (input.equals("B")) {
+                System.out.println("Seasons selected. Please use \" ' \" after a letter to indicate accent marks. Example: \u00ED would be i' " +
+                        "| For ~ accent marks, input ' instead.");
                 String summer = "";
                 String winter = "";
                 String spring = "";
@@ -120,11 +122,9 @@ public class LearnerClient {
                     asked = 1;
                     while (asked < 5) {
                         int question = (int) (Math.random() * 4 + 1);
-                        System.out.println("Question number: " + question);
                         if (question == 1 && !summerAsked) {
                             System.out.println("What is verano in English?");
                             summer = s.nextLine().toLowerCase();
-                            System.out.println("Here");
                             asked++;
                             summerAsked = true;
                         }
@@ -153,9 +153,10 @@ public class LearnerClient {
                 }
             }
                 // months practice
-            if (input.equals("C"))
+            else if (input.equals("C"))
             {
-                System.out.println("Months selected. Please use \" ' \" after a letter to indicate accent marks. Example: \u00ED would be i'");
+                System.out.println("Months selected. Please use \" ' \" after a letter to indicate accent marks. Example: \u00ED would be i' " +
+                        "| For ~ accent marks, input ' instead.");
                 if (sp.isEnglishToSpanish())
                 {
                     System.out.println("What is January in Spanish?");
@@ -182,47 +183,52 @@ public class LearnerClient {
                     String nov = s.nextLine().toLowerCase();
                     System.out.println("What is December in Spanish?");
                     String dec = s.nextLine().toLowerCase();
+                    System.out.println(sp.months(jan, feb, mar, apr, may, june, july, aug, sep, oct, nov, dec));
                 }
                 else
                 {
-                    System.out.println("What is January in English?");
+                    System.out.println("What is enero in English?");
                     String jan = s.nextLine().toLowerCase();
-                    System.out.println("What is February in English?");
+                    System.out.println("What is febrero in English?");
                     String feb = s.nextLine().toLowerCase();
-                    System.out.println("What is March in English?");
+                    System.out.println("What is marzo in English?");
                     String mar = s.nextLine().toLowerCase();
-                    System.out.println("What is April in English?");
+                    System.out.println("What is abril in English?");
                     String apr = s.nextLine().toLowerCase();
-                    System.out.println("What is May in English?");
+                    System.out.println("What is mayo in English?");
                     String may = s.nextLine().toLowerCase();
-                    System.out.println("What is June in English?");
+                    System.out.println("What is junio in English?");
                     String june = s.nextLine().toLowerCase();
-                    System.out.println("What is July in English?");
+                    System.out.println("What is julio in English?");
                     String july = s.nextLine().toLowerCase();
-                    System.out.println("What is August in English?");
+                    System.out.println("What is agosto in English?");
                     String aug = s.nextLine().toLowerCase();
-                    System.out.println("What is September in English?");
+                    System.out.println("What is septiembre in English?");
                     String sep = s.nextLine().toLowerCase();
-                    System.out.println("What is October in English?");
+                    System.out.println("What is octubre in English?");
                     String oct = s.nextLine().toLowerCase();
-                    System.out.println("What is November in English?");
+                    System.out.println("What is noviembre in English?");
                     String nov = s.nextLine().toLowerCase();
-                    System.out.println("What is December in English?");
+                    System.out.println("What is diciembre in English?");
                     String dec = s.nextLine().toLowerCase();
+                    System.out.println(sp.months(jan, feb, mar, apr, may, june, july, aug, sep, oct, nov, dec));
                 }
             }
 
-            if (input.equals("EDIT"))
+            else if (input.equals("EDIT"))
             {
                 sp.updatePractice();
                 System.out.println("Practice mode swapped.");
             }
 
+            else if (input.equals("END")){
+                System.out.println("Exiting.");
+            }
             else
             {
                 System.out.println("Invalid input.");
             }
         }
-        System.out.println("Thank you for using Spanish learner! Goodbye!");
+        System.out.println(sp);
     }
 }
