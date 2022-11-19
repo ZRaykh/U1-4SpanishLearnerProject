@@ -215,15 +215,19 @@ public class LearnerClient {
                 }
             }
 
+            //edit mode to change practice modes
             else if (input.equals("EDIT"))
             {
                 sp.updatePractice();
                 System.out.println("Practice mode swapped.");
             }
 
+            //mode to end the program, used so that Invalid input. isn't returned when end is entered
             else if (input.equals("END")){
                 System.out.println("Exiting.");
             }
+
+            //Returns invalid input if the user enters something other than the specified options.
             else
             {
                 System.out.println("Invalid input.");

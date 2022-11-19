@@ -1,4 +1,9 @@
 import  java.text.DecimalFormat;
+
+/**
+ * The SpanishLearner class represents the answer sheet, the users name, their form of practice, and skill level/grade
+ * are stored here along with the correct answers.
+ */
 public class SpanishLearner {
     //Decimal format set up
     DecimalFormat df = new DecimalFormat("0.00");
@@ -10,34 +15,78 @@ public class SpanishLearner {
     private int level;
 
    //class that tracks the user level
-    public SpanishLearner (String username, boolean spanishToEnglish, int userLevel)
+
+    /**
+     * Constructor for the SpanishLearner, this version has the user level and while not used in the program currently
+     * if it were to be properly implemented the user level would scale along with the questions correct.
+     *
+     * @param username stands for the name of a person
+     * @param englishToSpanish stands for if their practice is converting English to Spanish or Spanish to English
+     * @param userLevel stands for the user's skill level.
+     */
+    public SpanishLearner (String username, boolean englishToSpanish, int userLevel)
     {
         user = username;
-        isEnglishToSpanish = spanishToEnglish;
+        isEnglishToSpanish = englishToSpanish;
         level = userLevel;
     }
 
-    //user level is disabled
-    public SpanishLearner (String username, boolean spanishToEnglish)
+    //class when user level is disabled
+
+    /**
+     * Another constructor for the SpanishLearner that skips userlevel and automatically defines it.
+     *
+     * @param username stands for the name of a person
+     * @param englishToSpanish stands for if their practice is converting English to Spanish or Spanish to English
+     */
+    public SpanishLearner (String username, boolean englishToSpanish)
     {
         user = username;
-        isEnglishToSpanish = spanishToEnglish;
+        isEnglishToSpanish = englishToSpanish;
         level = -1;
     }
 
     //swaps the practice modes around
+
+    /**
+     * Changes the practice mode from one to another, if isEnglishToSpanish = true, it becomes false, so the user
+     * will convert Spanish to English rather than English to Spanish now.
+     */
     public void updatePractice()
     {
         isEnglishToSpanish = !isEnglishToSpanish;
     }
 
     //returns the level of the user
+
+    /**
+     * Returns the boolean value of isEnglishToSpanish to programs that call the variable from the outside.
+     *
+     * @return returns the value of boolean isEnglishToSpanish, if it is true the return is true, if false then false is
+     * returned
+     */
     public boolean isEnglishToSpanish()
     {
         return isEnglishToSpanish;
     }
 
     //answer sheet for days of the week
+
+    /**
+     * daysOfWeek checks all the answers related to days of the week and concatenates a string for what answers are
+     * right and wrong. It then returns the amount correct as well.
+     *
+     * @param monday stands for the answer that the user entered to the question related to Monday
+     * @param tuesday stands for the answer that the user entered to the question related to Tuesday
+     * @param wednesday stands for the answer that the user entered to the question related to Wednesday
+     * @param thursday stands for the answer that the user entered to the question related to Thursday
+     * @param friday stands for the answer that the user entered to the question related to Friday
+     * @param saturday stands for the answer that the user entered to the question related to Saturday
+     * @param sunday stands for the answer that the user entered to the question related to Sunday
+     *
+     * @return returns a string in a properly formatted sentence containing what answers were right, wrong, and the
+     * ratio of right and wrong. This string is formatted with days of the week questions in mind.
+     */
     public String daysOfWeek(String monday, String tuesday, String wednesday, String thursday, String friday, String saturday, String sunday)
     {
         String answerSheet;
@@ -182,7 +231,21 @@ public class SpanishLearner {
         answerSheet += "\nYou got a score of " + count + "/7 or " + df.format(score) + " correct!";
         return answerSheet;
     }
+
     //answer sheet for the seasons
+
+    /**
+     * seasons checks all the answers related to days of the week and concatenates a string for what answers are
+     * right and wrong. It then returns the amount correct as well.
+     *
+     * @param summer stands for the user's answer related to the question about summer
+     * @param winter stands for the user's answer related to the question about winter
+     * @param spring stands for the user's answer related to the question about spring
+     * @param fall stands for the user's answer related to the question about fall
+     *
+     * @return returns a string in a properly formatted sentence containing what answers were right, wrong, and the
+     * ratio of right and wrong. This string is formatted with the seasons questions in mind.
+     */
     public String seasons(String summer, String winter, String spring, String fall)
     {
         String answerSheet;
@@ -259,7 +322,29 @@ public class SpanishLearner {
         answerSheet += "\nYou got a score of " + count + "/4 or " + df.format(score) + " correct!";
         return answerSheet;
     }
+
     //answer sheet for the months
+
+    /**
+     * months  checks all the answers related to days of the week and concatenates a string for what answers are
+     * right and wrong. It then returns the amount correct as well.
+     *
+     * @param jan stands for the user's answer related to the question about January
+     * @param feb stands for the user's answer related to the question about February
+     * @param mar stands for the user's answer related to the question about March
+     * @param apr stands for the user's answer related to the question about April
+     * @param may stands for the user's answer related to the question about May
+     * @param june stands for the user's answer related to the question about June
+     * @param july stands for the user's answer related to the question about July
+     * @param aug stands for the user's answer related to the question about August
+     * @param sept stands for the user's answer related to the question about September
+     * @param oct stands for the user's answer related to the question about October
+     * @param nov stands for the user's answer related to the question about November
+     * @param dec stands for the user's answer related to the question about December
+     *
+     * @return returns a string in a properly formatted sentence containing what answers were right, wrong, and the
+     *      * ratio of right and wrong. This string is formatted with the months questions in mind.
+     */
     public String months(String jan, String feb, String mar, String apr, String may, String june, String july, String aug, String sept, String oct, String nov, String dec)
     {
         String answerSheet;
@@ -504,9 +589,18 @@ public class SpanishLearner {
         answerSheet += "\nYou got a score of " + count + "/12 or " + df.format(score) + " correct!";
         return answerSheet;
     }
+
+    //to string method
+
+    /**
+     * toString method, this will return a message showing all information about the class along with a goodbye message.
+     *
+     * @returns the formatted goodbye message for the user with their name, practice mode, and skill level if the level
+     * was enabled
+     */
     public String toString()
     {
-        String goodbye = "Thank you for using Spanish learner " + user;
+        String goodbye = "Thank you for using Spanish learner " + user + "\nPractice mode English to Spanish: " + isEnglishToSpanish;
         if (level != - 1)
         {
             goodbye += "\nFinishing skill level: " + level;
