@@ -184,7 +184,7 @@ public class SpanishLearner {
             }
             else
             {
-                answerSheet += "\nMiércoles: incorrect! Miércoles is Wednesday in English!";
+                answerSheet += "\nMi\u00e9rcoles: incorrect! Mi\u00e9rcoles is Wednesday in English!";
             }
 
             if (thursday.equals("thursday"))
